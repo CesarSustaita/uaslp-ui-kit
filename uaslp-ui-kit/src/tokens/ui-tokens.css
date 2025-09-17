@@ -1,0 +1,202 @@
+:root {
+    /* 1. Tokens Primitivos (La paleta de colores base) */
+
+    /* blue-dark */
+    --blue-dark-50: #e6edf5;
+    --blue-dark-100: #b0c7df;
+    --blue-dark-200: #8aacd0;
+    --blue-dark-300: #5486ba;
+    --blue-dark-400: #336ead;
+    --blue-dark-500: #004a98;
+    --blue-dark-600: #00438a;
+    --blue-dark-700: #00356c;
+    --blue-dark-800: #002954;
+    --blue-dark-900: #001f40;
+
+    /* blue-light */
+    --blue-light-50: #e6f7fc;
+    --blue-light-100: #b0e7f6;
+    --blue-light-200: #8adcf2;
+    --blue-light-300: #54cbec;
+    --blue-light-400: #33c1e9;
+    --blue-light-500: #00b2e3;
+    --blue-light-600: #00a2cf;
+    --blue-light-700: #007ea1;
+    --blue-light-800: #00627d;
+    --blue-light-900: #004b5f;
+
+    /* gray-blue */
+    --gray-blue-50: #fdfdfe;
+    --gray-blue-100: #f8f9fb;
+    --gray-blue-200: #f4f6f9;
+    --gray-blue-300: #eff2f6;
+    --gray-blue-400: #ecf0f4;
+    --gray-blue-500: #e7ecf1;
+    --gray-blue-600: #d2d7db;
+    --gray-blue-700: #a4a8ab;
+    --gray-blue-800: #7f8285;
+    --gray-blue-900: #616365;
+
+    /* gray */
+    --gray-50: #f8f8f8;
+    --gray-100: #ededed;
+    --gray-200: #d4d4d4;
+    --gray-300: #bfbfbf;
+    --gray-400: #9e9e9e;
+    --gray-500: #7e7e7e;
+    --gray-600: #5f5f5f;
+    --gray-700: #3f3f3f;
+    --gray-800: #222222;
+    --gray-900: #101010;
+
+    /* green */
+    --green-50: #e8f8ee;
+    --green-100: #b9e9ca;
+    --green-200: #97dfb0;
+    --green-300: #68d08c;
+    --green-400: #4ac776;
+    --green-500: #1db954;
+    --green-600: #1aa84c;
+    --green-700: #15833c;
+    --green-800: #10662e;
+    --green-900: #0c4e23;
+
+    /* red */
+    --red-50: #fbe9e9;
+    --red-100: #f3bbbb;
+    --red-200: #ed9b9b;
+    --red-300: #e56d6d;
+    --red-400: #e05151;
+    --red-500: #d82525;
+    --red-600: #c52222;
+    --red-700: #991a1a;
+    --red-800: #771414;
+    --red-900: #5b1010;
+
+    /* yellow */
+    --yellow-50: #fff9e7;
+    --yellow-100: #ffebb4;
+    --yellow-200: #ffe18f;
+    --yellow-300: #ffd35c;
+    --yellow-400: #ffcb3d;
+    --yellow-500: #ffbe0c;
+    --yellow-600: #e8ad0b;
+    --yellow-700: #b58709;
+    --yellow-800: #8c6907;
+    --yellow-900: #6b5005;
+
+    
+    /* 2. Tokens Semánticos (Los tokens con un propósito) */
+
+    /* BACKGROUND */
+        /* BACKGROUND-BACKGROUND */
+    --background-background-default: var(--gray-50);
+    --background-background-component: var(--gray-blue-50);
+        /* BACKGROUND-BRAND */
+    --background-brand-default: var(--blue-dark-500);
+    --background-brand-default-hover: var(--blue-dark-700);
+    --background-brand-default-disabled: var(--blue-dark-100);
+    --background-brand-secondary-disabled: var(--blue-dark-50);
+    --background-brand-secondary-hover: var(--blue-dark-100);
+    --background-brand-secondary: var(--blue-dark-50);
+    --background-brand-tertiary-hover: var(--gray-blue-100);
+    --background-brand-tertiary: var(--gray-blue-50);
+    --background-brand-disabled: var(--gray-blue-50);
+        /* BACKGROUND-NEUTRO */
+    --background-neutro-default: var(--gray-700);
+    --background-neutro-default-hover: var(--gray-800);
+    --background-neutro-default-disabled: var(--gray-500);
+    --background-neutro-secondary: var(--gray-600);
+    --background-neutro-secondary-hover: var(--gray-400);
+    --background-neutro-secondary-disabled: var(--gray-500);
+    --background-neutro-tertiary: var(--gray-200);
+    --background-neutro-tertiary-hover: var(--gray-300);
+    --background-neutro-disabled: var(--gray-100);
+        /* BACKGROUND-POSITIVE */
+    --background-positive-default: var(--green-700);
+    --background-positive-default-hover: var(--green-800);
+    --background-positive-secondary: var(--green-400);
+    --background-positive-secondary-hover: var(--green-500);
+    --background-positive-tertiary: var(--green-50);
+    --background-positive-tertiary-hover: var(--green-100);
+    --background-positive-disabled: var(--green-100);
+        /* BACKGROUND-NEGATIVE */
+    --background-warning-default: var(--yellow-600);
+    --background-warning-default-hover: var(--yellow-700);
+    --background-warning-secondary: var(--yellow-300);
+    --background-warning-secondary-hover: var(--yellow-400);
+    --background-warning-tertiary: var(--yellow-100);
+    --background-warning-tertiary-hover: var(--yellow-200);
+    --background-warning-disabled: var(--yellow-50);
+        /* BACKGROUND-DANGER */
+    --background-danger-default: var(--red-500);
+    --background-danger-default-hover: var(--red-700);
+    --background-danger-secondary: var(--red-400);
+    --background-danger-secondary-hover: var(--red-600);
+    --background-danger-tertiary: var(--red-50);
+    --background-danger-tertiary-hover: var(--red-100);
+    --background-danger-disabled: var(--red-100);
+    
+    
+    /* TEXT */
+        /* TEXT-DEFAULT */
+    --text-default-default: var(--gray-800);
+    --text-default-secondary: var(--gray-700);
+    --text-default-tertiary: var(--gray-600);
+    --text-default-disabled: var(--gray-300);
+    --text-default-on-element-primary: var(--gray-50);
+    --text-default-on-element-secondary: var(--gray-500);
+    --text-default-on-element-tertiary: var(--gray-800);
+        /* TEXT-BRAND */
+    --text-brand-default: var(--blue-dark-500);
+    --text-brand-secondary: var(--blue-dark-400);
+    --text-brand-tertiary: var(--blue-dark-300);
+    --text-brand-disabled: var(--blue-dark-100);
+        /* TEXT-POSITIVE */
+    --text-positive-default: var(--green-800);
+    --text-positive-secondary: var(--green-700);
+    --text-positive-tertiary: var(--green-600);
+    --text-positive-disabled: var(--green-200);
+        /* TEXT-WARNING */
+    --text-warning-default: var(--yellow-800);
+    --text-warning-secondary: var(--yellow-700);
+    --text-warning-tertiary: var(--yellow-600);
+    --text-warning-disabled: var(--yellow-200);
+        /* TEXT-DANGER */
+    --text-danger-default: var(--red-800);
+    --text-danger-secondary: var(--red-700);
+    --text-danger-tertiary: var(--red-600);
+    --text-danger-disabled: var(--red-200);
+
+    
+    /* BORDER */
+        /* BORDER-DEFAULT */
+    --border-default-default: var(--gray-800);
+    --border-default-secondary: var(--gray-600);
+    --border-default-tertiary: var(--gray-400);
+    --border-default-disabled: var(--gray-200);
+    --border-default-on-element-tertiary: var(--gray-800);
+    --border-default-on-element-secondary: var(--gray-500);
+    --border-default-on-element-primary: var(--gray-50);
+        /* BORDER-BRAND */
+    --border-brand-default: var(--blue-dark-500);
+    --border-brand-secondary: var(--blue-dark-400);
+    --border-brand-tertiary: var(--blue-dark-300);
+    --border-brand-disabled: var(--blue-dark-100);
+        /* BORDER-POSITIVE */
+    --border-positive-primary: var(--green-500);
+    --border-positive-secondary: var(--green-700);
+    --border-positive-tertiary: var(--green-900);
+    --border-positive-disabled: var(--green-200);
+        /* BORDER-WARNING */
+    --border-warning-primary: var(--yellow-500);
+    --border-warning-secondary: var(--yellow-700);
+    --border-warning-tertiary: var(--yellow-900);
+    --border-warning-disabled: var(--yellow-200);
+        /* BORDER-DANGER */
+    --border-danger-primary: var(--red-500);
+    --border-danger-secondary: var(--red-700);
+    --border-danger-tertiary: var(--red-900);
+    --border-danger-disabled: var(--red-200);
+
+}
