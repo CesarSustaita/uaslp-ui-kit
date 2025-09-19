@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UASLP UI Kit - Botón</title>
+    <script type="module" src="/src/components/ui-button.js"></script>
+    <style>
+        /* Agrega estilos simples para centrar o mejorar la vista */
+        body {
+            padding: 2rem
+        }
+
+        .button-colum {
+            display: flex;
+            border: 0px solid rgb(20, 20, 20);
+            flex-direction: column;
+            
+        }
+
+        .button-row {
+            display: flex;
+            flex-direction: row;
+            border: 0px solid gray;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+       
+    </style>
+</head>
+<body>
+    <a href="/">Volver a la lista</a>
+
+    <h1>Componente de Botón</h1>
+
+
+    <div class="button-colum">
+        <h2>Botones Size "normal"</h2>
+        <h4>primary - secondary - tertiary</h4>
+        <div class="button-row">
+                <ui-button type="primary">UI Button</ui-button>
+                <ui-button type="secondary"> UI Button</ui-button>
+                <ui-button type="tertiary"> UI Button </ui-button>
+        </div>
+        <h4>disabled normal</h4>
+        <div class="button-row">
+                <ui-button type="primary"  disabled > UI Button </ui-button>
+                <ui-button type="secondary"  disabled > UI Button</ui-button>
+                <ui-button type="tertiary"  disabled > UI Button</ui-button>
+        </div>
+
+        <h2>Botones Size "small"</h2>
+        <h4>primary - secondary - tertiary</h4>
+        <div class="button-row">
+                <ui-button type="primary" size="small" > UI Button</ui-button>
+                <ui-button type="secondary" size="small" >UI Button</ui-button>
+                <ui-button type="tertiary" size="small" >UI Button</ui-button>
+        </div>
+        <h4>disabled small</h4>
+        <div class="button-row">
+                <ui-button type="primary" size="small" disabled >UI Button</ui-button>
+                <ui-button type="secondary" size="small" disabled>UI Button</ui-button>
+                <ui-button type="tertiary" size="small" disabled>UI Button</ui-button>
+        </div>
+
+
+        <h2>Botones Size "normal" Icon Start</h2>
+        <h4>primary - secondary - tertiary</h4>
+        <div class="button-row">
+                <ui-button type="primary" > UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                </ui-button>
+
+                <ui-button type="secondary" > UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+
+                <ui-button type="tertiary" > UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+        </div>
+
+        <h4>disabled normal</h4>
+        <div class="button-row">
+                <ui-button type="primary" disabled> UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                </ui-button>
+
+                <ui-button type="secondary" disabled> UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+
+                <ui-button type="tertiary" disabled> UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+        </div>
+
+        <h4>primary - secondary - tertiary small </h4>
+        <div class="button-row">
+                <ui-button type="primary" size="small" >UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+
+                <ui-button type="secondary" size="small" > UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+            
+                <ui-button type="tertiary" size="small" > UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+        </div>
+
+        <h4>disabled small</h4>
+        <div class="button-row">
+                <ui-button type="primary" size="small" disabled>UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+
+                <ui-button type="secondary" size="small" disabled> UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+            
+                <ui-button type="tertiary" size="small" disabled> UI Button
+                    <svg slot="icon-start" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+        </div>
+
+
+
+        <h2>Botones Size "normal" Icon End</h2>
+        <h4>primary - secondary - tertiary</h4>
+        <div class="button-row">
+                <ui-button type="primary" > UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+
+                <ui-button type="secondary" > UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+            
+                <ui-button type="tertiary" > UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+        </div>
+
+        <h4>disabled normal</h4>
+        <div class="button-row">
+                <ui-button type="primary" disabled> UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+
+                <ui-button type="secondary" disabled> UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+            
+                <ui-button type="tertiary" disabled> UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+        </div>
+
+
+        <h4>primary - secondary - tertiary small</h4>
+        <div class="button-row">
+                <ui-button type="primary" size="small" >UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+
+                <ui-button type="secondary" size="small" > UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+            
+                <ui-button type="tertiary" size="small" > UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+        </div>
+
+        <h4>disabled small</h4>
+        <div class="button-row">
+                <ui-button type="primary" size="small" disabled> UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+
+                <ui-button type="secondary" size="small" disabled> UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+            
+                <ui-button type="tertiary" size="small" disabled> UI Button
+                    <svg slot="icon-end" width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-button>
+        </div>
+
+    </div>
+
+   
+    
+    
+
+    
+    
+
+
+    
+    
+
+
+
+    
+
+
+
+
+    
+
+
+
+    
+
+
+ 
+    
+</body>
+
+</html>
