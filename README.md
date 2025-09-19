@@ -7,7 +7,7 @@ Este proyecto es un ecosistema de diseño completo que incluye un UI Kit de Figm
 ---
 
 
-# UASLP UI Kit
+# uaslp-ui-kit
 
 **A design system and web component library for the Universidad Autónoma de San Luis Potosí (UASLP).**
 
