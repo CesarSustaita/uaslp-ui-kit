@@ -199,4 +199,11 @@
     --border-danger-tertiary: var(--red-900);
     --border-danger-disabled: var(--red-200);
 
+
+    /* Font OpenSans */
+    --font-open-sans: 'Open Sans';
+}
+
+body {
+    font-family: var(--font-open-sans);
 }
