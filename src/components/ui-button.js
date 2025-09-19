@@ -7,6 +7,7 @@ export class UIButton extends LitElement {
     size: { type: String, reflect: true },      // 'medium' | 'small'
     type: { type: String, reflect: true },      // 'primary' | 'secondary' | 'tertiary'
     disabled: { type: Boolean, reflect: true },
+    state: { type: String, reflect: true }, // 'Danger' | 'Positive'
   };
   // Define scoped styles right with your component, in plain CSS
   static styles = css`
@@ -27,6 +28,9 @@ export class UIButton extends LitElement {
       font-style: normal;
       font-weight: 400;
       line-height: 100%; /* 16px */
+      white-space: nowrap;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
   }
 
     /* estilos para small */
@@ -100,6 +104,35 @@ export class UIButton extends LitElement {
       color: var(--text-default-disabled);
     }
 
+    button.danger{
+      background: var(--background-danger-default);
+      border: 1px solid var(--background-danger-default);
+    }
+
+    button.danger:hover{
+      border: 1px solid var(--background-danger-default-hover);
+      background: var(--background-danger-default-hover);
+    }
+
+    button.danger:disabled {
+      border: 1px solid var(--background-danger-disabled);
+      background: var(--background-danger-disabled);
+    }
+
+    button.positive{
+      border: 1px solid var(--background-positive-default);
+      background: var(--background-positive-default);
+    }
+
+    button.positive:hover{
+      border: 1px solid var(--background-positive-default-hover);
+      background: var(--background-positive-default-hover);
+    }
+
+    button.positive:disabled {
+      border: 1px solid var(--background-positive-disabled);
+      background: var(--background-positive-disabled);
+    }
 
   `;
 
@@ -112,9 +145,10 @@ export class UIButton extends LitElement {
   render() {
     const sizeClass = this.size === 'small' ? 'sm' : '';
     const typeClass = ['primary', 'secondary', 'tertiary'].includes(this.type) ? this.type : 'primary';
+    const stateClass = ['danger', 'positive',].includes(this.state) ? this.state : 'primary';
     return html`
     <button 
-    class="${typeClass} ${sizeClass}" ?disabled=${this.disabled}>
+    class="${stateClass} ${typeClass} ${sizeClass}" ?disabled=${this.disabled}>
 
     <slot name="icon-start"></slot>
     <slot></slot> 
