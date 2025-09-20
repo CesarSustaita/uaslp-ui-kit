@@ -7,7 +7,7 @@ export class UIButton extends LitElement {
     size: { type: String, reflect: true },      // 'medium' | 'small'
     type: { type: String, reflect: true },      // 'primary' | 'secondary' | 'tertiary'
     disabled: { type: Boolean, reflect: true },
-    state: { type: String, reflect: true }, // 'Danger' | 'Positive'
+    
   };
   static styles = css`
 
@@ -44,6 +44,10 @@ export class UIButton extends LitElement {
       cursor: pointer;
   }
 
+    button:disabled {
+      cursor: default;
+    }
+
     ::slotted(svg) {
             width: 1em; 
             height: 1em;
@@ -61,7 +65,6 @@ export class UIButton extends LitElement {
     }
 
     button.primary:disabled {
-      cursor: default;
       border: 1px solid var(--background-brand-default-disabled);
       background: var(--background-brand-default-disabled);
     }
@@ -78,7 +81,6 @@ export class UIButton extends LitElement {
     }
 
     button.secondary:disabled {
-      cursor: default;
       border: 1px solid var(--text-brand-disabled);
       background: var(--background-brand-secondary-disabled);
       color: var(--text-brand-disabled);
@@ -97,7 +99,6 @@ export class UIButton extends LitElement {
     }
 
     button.tertiary:disabled {
-      cursor: default;
       border: 1px solid var(--Border-Default-Disabled);
       background: var(--Background-Brand-Disabled);
       color: var(--text-default-disabled);
@@ -106,6 +107,7 @@ export class UIButton extends LitElement {
     button.danger{
       background: var(--background-danger-default);
       border: 1px solid var(--background-danger-default);
+      color: var(--text-default-on-element-primary);
     }
 
     button.danger:hover{
@@ -121,6 +123,7 @@ export class UIButton extends LitElement {
     button.positive{
       border: 1px solid var(--background-positive-default);
       background: var(--background-positive-default);
+      color: var(--text-default-on-element-primary);
     }
 
     button.positive:hover{
@@ -142,11 +145,10 @@ export class UIButton extends LitElement {
 
   render() {
     const sizeClass = this.size === 'small' ? 'sm' : '';
-    const typeClass = ['primary', 'secondary', 'tertiary'].includes(this.type) ? this.type : 'primary';
-    const stateClass = ['danger', 'positive',].includes(this.state) ? this.state : 'primary';
+    const typeClass = ['primary', 'secondary', 'tertiary','danger', 'positive'].includes(this.type) ? this.type : 'primary';
     return html`
     <button 
-    class="${stateClass} ${typeClass} ${sizeClass}" ?disabled=${this.disabled}>
+    class="${typeClass} ${sizeClass}" ?disabled=${this.disabled}>
 
     <slot name="icon-start"></slot>
     <slot></slot> 

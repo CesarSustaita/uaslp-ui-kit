@@ -42,6 +42,10 @@ export class UIconButton extends LitElement {
       cursor: pointer;
   }
 
+    button:disabled {
+      cursor: default;
+    }
+
     ::slotted(svg) {
       width: 24px; 
       height: 24px;
@@ -68,7 +72,6 @@ export class UIconButton extends LitElement {
     }
 
     button.primary:disabled{
-        cursor: default;
         border: 1px solid var(--background-brand-default-disabled);
         background: var(--background-brand-default-disabled);
     }
@@ -85,7 +88,6 @@ export class UIconButton extends LitElement {
     }
 
     button.secondary:disabled{
-        cursor: default;
         border: 1px solid var(--background-brand-secondary-disabled);
         background: var(--background-brand-secondary-disabled,);
         color: var(--border-brand-disabled);
@@ -104,7 +106,6 @@ export class UIconButton extends LitElement {
     }
 
     button.tertiary:disabled{
-        cursor: default;
         border: 1px solid var(--border-default-disabled);
         background: var(--background-brand-tertiary);
         color: var(--border-brand-disabled);
