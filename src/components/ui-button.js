@@ -9,7 +9,6 @@ export class UIButton extends LitElement {
     disabled: { type: Boolean, reflect: true },
     state: { type: String, reflect: true }, // 'Danger' | 'Positive'
   };
-  // Define scoped styles right with your component, in plain CSS
   static styles = css`
 
     /* estilos para medium (por defecto) */
@@ -141,7 +140,6 @@ export class UIButton extends LitElement {
     this.disabled = false;
   }
 
-  // Render the UI as a function of component state
   render() {
     const sizeClass = this.size === 'small' ? 'sm' : '';
     const typeClass = ['primary', 'secondary', 'tertiary'].includes(this.type) ? this.type : 'primary';

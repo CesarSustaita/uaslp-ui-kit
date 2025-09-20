@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UASLP UI Kit - Botón</title>
     <script type="module" src="/src/components/ui-button.js"></script>
+    <script type="module" src="/src/components/ui-icon-button.js"></script>
     <style>
-        /* Agrega estilos simples para centrar o mejorar la vista */
+        
         body {
             padding: 2rem
         }
@@ -320,33 +321,93 @@
 
     </div>
 
+
+    <h2>Icon Button</h2>
+        <h4>Primary - secondary - tertiarty</h4>
+        <div class="button-row">
+                <ui-icon-button  type="primary"> 
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+
+                <ui-icon-button  type="secondary"> 
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+
+                <ui-icon-button  type="tertiary"> 
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+        </div>
+        <h4>Disabled</h4>
+        <div class="button-row">
+                <ui-icon-button  type="primary" disabled> 
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+
+                <ui-icon-button  type="secondary" disabled> 
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+
+                <ui-icon-button  type="tertiary" disabled> 
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+        </div>
+
+
+        <h4>Primary - secondary - tertiarty "small"</h4>
+        <div class="button-row">
+                <ui-icon-button  size="small" type="primary">  
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+
+                <ui-icon-button  size="small" type="secondary">  
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+
+                <ui-icon-button  size="small" type="tertiary">  
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button> 
+        </div>
+        <h4>Disabled small</h4>
+        <div class="button-row">
+                <ui-icon-button  size="small" type="primary" disabled>  
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+
+                <ui-icon-button  size="small" type="secondary" disabled>  
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button>
+
+                <ui-icon-button  size="small" type="tertiary" disabled>  
+                    <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </ui-icon-button> 
+        </div>
+
    
-    
-    
-
-    
-    
-
-
-    
-    
-
-
-
-    
-
-
-
-
-    
-
-
-
-    
-
-
- 
-    
+     
 </body>
 
 </html>
