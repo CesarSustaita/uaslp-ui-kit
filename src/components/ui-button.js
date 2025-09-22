@@ -148,13 +148,27 @@ export class UIButton extends LitElement {
     const typeClass = ['primary', 'secondary', 'tertiary','danger', 'positive'].includes(this.type) ? this.type : 'primary';
     return html`
     <button 
-    class="${typeClass} ${sizeClass}" ?disabled=${this.disabled}>
+    class="${typeClass} ${sizeClass}" ?disabled=${this.disabled}
+    @click=${this.handleClick}
+    >
 
     <slot name="icon-start"></slot>
     <slot></slot> 
     <slot name="icon-end"></slot>
     
     </button>`;
+  }
+
+  handleClick(event){
+    if(this.disabled){
+      event.stopPropagation();
+      return;
+    }
+
+    this.dispatchEvent(new CustomEvent('click',{ //event name
+      bubbles: true,
+      composed: true
+    }));
   }
 }
 customElements.define('ui-button', UIButton);
