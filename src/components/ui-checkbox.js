@@ -5,7 +5,8 @@ import '../tokens/ui-fonts.css';
 export class UICheckbox extends LitElement {
     static properties = {
         active: { type: Boolean, reflect: true },
-        disabled: { type: Boolean, reflect: true }
+        disabled: { type: Boolean, reflect: true },
+        id: { type: String, reflect: true } 
     };
     static styles = css `
         
@@ -88,6 +89,10 @@ export class UICheckbox extends LitElement {
         super();
         this.active = false;
         this.disabled = false;
+
+        if (!this.id) {
+            this.id = 'checkbox-' + Math.random().toString(36).substring(2, 9);
+        }
     }
 
 
@@ -96,13 +101,13 @@ export class UICheckbox extends LitElement {
             <div class="container">
                 <input
                     type="checkbox"
-                    id="checkbox-input"
+                    id=${this.id} 
                     class="hidden-input"
                     .checked=${this.active}
                     ?disabled=${this.disabled}
                     @change=${this.handleChange}
                 />
-                <label for="checkbox-input" class="checkbox-label">
+                <label for=${this.id}  class="checkbox-label">
                     <span class="icon-check">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10" fill="none">
                             <path d="M12.3334 1L5.00008 8.33333L1.66675 5" stroke="var(--border-default-on-element-primary)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
