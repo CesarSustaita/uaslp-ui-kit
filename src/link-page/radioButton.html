@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/src/components/ui-radio-button.js"></script>
+
+    <title>UASLP UI Kit - Radio Button</title>
+</head>
+<body>
+    <a href="/">Volver a la lista</a>
+
+    <h1>Componente Radio Button</h1>
+
+
+    <div>
+        <ui-radio-button name="servicio" id="a1" ></ui-radio-button>
+        <label for="a1">Opción A</label>
+    </div>
+    <div>
+        <ui-radio-button name="servicio" id="a2" checked></ui-radio-button>
+        <label for="a2">Opción B</label>
+    </div>
+    <div>
+        <ui-radio-button name="servicio"  id="a3" checked disabled></ui-radio-button>
+        <label for="a3">Opción C</label>
+    </div>
+    <div>
+        <ui-radio-button name="servicio"  id="a4"></ui-radio-button>
+        <label for="a4">Opción d</label>
+    </div>
+    <div>
+        <ui-radio-button name="servicio"  id="a5" disabled></ui-radio-button>
+        <label for="a5">Opción e</label>
+    </div>
+    <div>
+        <ui-radio-button name="servicio"  id="a6"></ui-radio-button>
+        <label for="a6">Opción f</label>
+    </div>
+
+
+    <script>
+    document.addEventListener('change', (event) => {
+        // Aseguramos que el evento viene de nuestro componente
+        if (event.target.tagName !== 'UI-RADIO-BUTTON') {
+            return;
+        }
+
+        // --- Lectura de los valores desde event.detail ---
+        const { name, id } = event.detail; 
+        
+        // 1. Encuentra todos los UI-RADIO-BUTTONS
+        const allRadios = document.querySelectorAll('ui-radio-button');
+
+        allRadios.forEach(radio => {
+
+            // 2. Omitir cualquier radio que esté deshabilitado.
+            if (radio.disabled) {
+                return; // Ignora este radio y pasa al siguiente
+            }
+            // 2. Comprueba si está en el mismo grupo PERO NO es el que se acaba de hacer clic
+            // Usamos .name y .id directamente de la propiedad host
+            if (radio.name === name && radio.id !== id) {
+                // 3. ¡Lo desactiva forzosamente!
+                radio.checked = false; 
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
