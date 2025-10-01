@@ -23,10 +23,8 @@ export class UIRadioButton extends LitElement {
         display: flex;
         width: 32px;
         height: 32px;
-        padding: 10px;
         justify-content: center;
         align-items: center;
-        gap: 10px;
         flex-shrink: 0;
         aspect-ratio: 1/1;
         border-radius: 1000px;
@@ -40,7 +38,6 @@ export class UIRadioButton extends LitElement {
         width: 20px;
         height: 20px;
         border-radius: 100px;
-        padding: 4px; 
         border: 1.6px solid var(--border-default-secondary);
         transition: all 0.1s ease-in-out;
         align-items: center;
@@ -56,12 +53,16 @@ export class UIRadioButton extends LitElement {
     /* Ocultar el icono por defecto */
     .icon-check {
         display: none;
-        width: 20px;
-        height: 20px;
+        width: 14px;
+        height: 14px;
         border-radius: 100px;
     }
 
     /* Estilo para el estado 'checked' */
+    .hidden-input:checked + .radio-label {
+        border: 1.6px solid var(--background-brand-default);
+    }
+
     .hidden-input:checked + .radio-label .icon-check {
         display: block;
         background: var(--background-brand-default);
