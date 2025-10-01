@@ -5,7 +5,8 @@ import '../tokens/ui-fonts.css';
 export class UISwitch extends LitElement {
     static properties = {
         checked: { type: Boolean, reflect: true },
-        disabled: { type: Boolean, reflect: true }
+        disabled: { type: Boolean, reflect: true },
+        id: { type: String,  reflect: true  } 
 
     };
     static styles = css `
@@ -93,6 +94,10 @@ export class UISwitch extends LitElement {
         super();
         this.checked = false;
         this.disabled = false;
+
+        if (!this.id) {
+        this.id = 'switch-' + Math.random().toString(36).substring(2, 9);
+        }
     }
 
 
@@ -100,13 +105,13 @@ export class UISwitch extends LitElement {
         return html `
             <input 
                 type="checkbox" 
-                id="toggle" 
+                id=${this.id}
                 class="switch-input" 
                 .checked=${this.checked}
                 ?disabled=${this.disabled}
                 @change=${this.handleChange}
             />
-            <label for="toggle" class="switch-label"></label>
+            <label for=${this.id} class="switch-label"></label>
         `;
     }
 
@@ -119,7 +124,8 @@ export class UISwitch extends LitElement {
 
     this.dispatchEvent(new CustomEvent('change', { //event name
         detail: {
-            checked: this.checked
+            checked: this.checked,
+            id: this.id,
         },
         bubbles: true,
         composed: true
