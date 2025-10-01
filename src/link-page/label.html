@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/src/components/ui-label.js"></script>
+
+    <title>UASLP UI Kit - Radio Button</title>
+</head>
+<body>
+    <a href="/">Volver a la lista</a>
+
+    <h1>Componente Labels "Componentes anidados"</h1>
+
+    <ui-label type="checkbox" label="Label"> 
+        <span slot="description">Description (optional)</span>  
+    </ui-label>
+
+    <ui-label type="checkbox" label="Label" checked> 
+        <span slot="description">Description (optional)</span>  
+    </ui-label>
+
+    <ui-label type="checkbox" label="Label" disabled > 
+        <span slot="description">Description (optional)</span>  
+    </ui-label>
+
+    <ui-label type="checkbox" label="Label" checked disabled > 
+        <span slot="description">Description (optional)</span>  
+    </ui-label>
+
+    <ui-label type="checkbox" label="Label"> </ui-label>
+
+    <ui-label type="checkbox" label="Label" checked> </ui-label>
+
+
+
+
+
+
+    <ui-label type="radio" label="Radio 1" name="servicio" id="a1">
+        <span slot="description">Description (optional)</span>  
+    </ui-label>
+
+    <ui-label type="radio" label="Radio 2" name="servicio" id="a2" checked>
+        <span slot="description">checked</span>  
+    </ui-label>
+
+    <ui-label type="radio" label="Radio 3" name="servicio" id="a3" checked disabled>
+        <span slot="description">checked disabled</span>  
+    </ui-label>
+
+    <ui-label type="radio" label="Radio 4" name="servicio" id="a4">
+        <span slot="description">Description (optional)</span>  
+    </ui-label>
+
+    <ui-label type="radio" label="Radio 5" name="servicio" id="a5" disabled>
+        <span slot="description">disabled</span>  
+    </ui-label>
+
+    <ui-label type="radio" label="Radio 6" name="servicio" id="a6" >
+        <span slot="description">Description (optional)</span>  
+    </ui-label>
+
+    <script>
+    document.addEventListener('change', (event) => {
+        // Aseguramos que el evento viene de nuestro componente
+        if (event.target.tagName !== 'UI-LABEL') {
+            return;
+        }
+
+        // --- Lectura de los valores desde event.detail ---
+        const { name, id } = event.detail; 
+        
+        // 1. Encuentra todos los UI-RADIO-BUTTONS
+        const allRadios = document.querySelectorAll('ui-label');
+
+        allRadios.forEach(radio => {
+
+            // 2. Omitir cualquier radio que esté deshabilitado.
+            if (radio.disabled) {
+                return; // Ignora este radio y pasa al siguiente
+            }
+            // 2. Comprueba si está en el mismo grupo PERO NO es el que se acaba de hacer clic
+            // Usamos .name y .id directamente de la propiedad host
+            if (radio.name === name && radio.id !== id) {
+                // 3. ¡Lo desactiva forzosamente!
+                radio.checked = false; 
+            }
+        });
+    });
+</script>
+
+
+
+
+
+    <ui-label type="switch" id="s1" label="Label">
+        <span slot="description">Description (optional) </span>  
+    </ui-label>
+
+    <ui-label type="switch" id="s2" label="Label" checked>
+        <span slot="description">Description (optional) </span>  
+    </ui-label>
+
+    <ui-label type="switch" id="s3" label="Label" disabled>
+        <span slot="description">Description (optional) </span>  
+    </ui-label>
+
+    <ui-label type="switch" id="s4" label="Label"checked disabled>
+        <span slot="description">Description (optional) </span>  
+    </ui-label>
+
+
+
+</body>
+</html>
