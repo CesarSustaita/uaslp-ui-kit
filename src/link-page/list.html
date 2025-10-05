@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/src/components/ui-list.js"></script>
+    <script type="module" src="/src/main.js"></script>
+    <title>UASLP UI Kit - List</title>
+</head>
+<body>
+    <a href="/">Volver a la lista</a>
+
+    <h1>Componentes List</h1>
+
+    <h3>default</h3>
+    
+
+    <ui-list text="Item" description="Description">
+        <ui-checkbox slot="end-element" id="c1" active></ui-checkbox>
+    </ui-list>
+
+
+    <ui-list text="Item" description="Description">
+        <svg slot="end-element" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </ui-list>
+
+    <ui-list text="Item" description="Description">
+        <svg slot="end-element" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </ui-list>
+
+    <ui-list text="Item" description="Description">
+        <svg slot="end-element" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </ui-list>
+
+
+    <ui-list text="Item" description="Description">
+        <img slot="start-element" src="/public/img/Avatar.svg" alt="Mi Imagen">
+        <svg slot="end-element" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </ui-list>
+
+    <ui-list text="Item" description="Description">
+        <img slot="start-element" src="/public/img/Avatar.svg" alt="Mi Imagen">
+        <span slot="end-element">88.8</span>
+    </ui-list>
+
+
+    <ui-list text="Item" description="Description" disabled>
+        <svg slot="end-element" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </ui-list>
+
+
+    <ui-list text="Item" description="Description" disabled>
+        <img slot="start-element" src="/public/img/Avatar.svg" alt="Mi Imagen">
+        <svg slot="end-element" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </ui-list>
+
+    <ui-list text="Item" description="Description" disabled>
+        <img slot="start-element" src="/public/img/Avatar.svg" alt="Mi Imagen">
+        <span slot="end-element">88.8</span>
+    </ui-list>
+
+
+</body>
+</html>

@@ -2,6 +2,7 @@ import {LitElement, css, html} from 'lit';
 import '../tokens/ui-tokens.css';
 import '../tokens/ui-fonts.css';
 import '../components/ui-button';
+import '../components/ui-icon-button';
 
 export class UICard extends LitElement {
     static properties = {
