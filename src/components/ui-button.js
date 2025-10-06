@@ -7,6 +7,8 @@ export class UIButton extends LitElement {
     size: { type: String, reflect: true },      // 'medium' | 'small'
     type: { type: String, reflect: true },      // 'primary' | 'secondary' | 'tertiary'
     disabled: { type: Boolean, reflect: true },
+    fullWidth: { type: Boolean, reflect: true }, //cambiar de ancho
+    id: { type: String, reflect: true },
     
   };
   static styles = css`
@@ -42,6 +44,11 @@ export class UIButton extends LitElement {
       border-radius: 8px;
       border: none;
       cursor: pointer;
+  }
+
+  button.full-width {
+    display: flex; 
+    width: 100%; 
   }
 
     button:disabled {
@@ -141,14 +148,19 @@ export class UIButton extends LitElement {
   constructor() {
     super();
     this.disabled = false;
+
+    if (!this.id) {
+            this.id = 'btn-' + Math.random().toString(36).substring(2, 9);
+    };
   }
 
   render() {
+    const widthClass = this.fullWidth ? 'full-width' : '';
     const sizeClass = this.size === 'small' ? 'sm' : '';
     const typeClass = ['primary', 'secondary', 'tertiary','danger', 'positive'].includes(this.type) ? this.type : 'primary';
     return html`
     <button 
-    class="${typeClass} ${sizeClass}" ?disabled=${this.disabled}
+    class="${typeClass} ${sizeClass} ${widthClass}" ?disabled=${this.disabled}
     @click=${this.handleClick}
     >
 
@@ -166,6 +178,7 @@ export class UIButton extends LitElement {
     }
 
     this.dispatchEvent(new CustomEvent('click',{ //event name
+      detail: { id: this.id },
       bubbles: true,
       composed: true
     }));
