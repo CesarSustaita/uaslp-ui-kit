@@ -7,6 +7,7 @@ export class UIconButton extends LitElement {
     size: { type: String, reflect: true },      // 'medium' | 'small'
     type: { type: String, reflect: true },      // 'primary' | 'secondary' | 'tertiary'
     disabled: { type: Boolean, reflect: true },
+    id: { type: String, reflect: true },
   };
   
   static styles = css`
@@ -116,6 +117,10 @@ export class UIconButton extends LitElement {
   constructor() {
     super();
     this.disabled = false;
+
+    if (!this.id) {
+            this.id = 'icon-btn-' + Math.random().toString(36).substring(2, 9);
+    };
   }
 
   // Render the UI as a function of component state
@@ -124,11 +129,24 @@ export class UIconButton extends LitElement {
     const typeClass = ['primary', 'secondary', 'tertiary'].includes(this.type) ? this.type : 'primary';
     return html`
     <button 
-    class="${typeClass} ${sizeClass}" ?disabled=${this.disabled}>
+    class="${typeClass} ${sizeClass}" @click=${this.handleClick}  ?disabled=${this.disabled}>
 
     <slot name="icon"></slot>
     
     </button>`;
+  }
+
+  handleClick(event){
+    if(this.disabled){
+      event.stopPropagation();
+      return;
+    }
+
+    this.dispatchEvent(new CustomEvent('click',{ //event 
+      detail: { id: this.id },
+      bubbles: true,
+      composed: true
+    }));
   }
 }
 customElements.define('ui-icon-button', UIconButton);

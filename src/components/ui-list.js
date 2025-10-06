@@ -15,6 +15,7 @@ export class UIList extends LitElement {
         
     .list-container {
         display: flex;
+        dis
         padding: 10px;
         flex-direction: row;
         align-items: flex-start;
@@ -161,4 +162,4 @@ export class UIList extends LitElement {
 
 
 }
-customElements.define('ui-list', UIList);a
+customElements.define('ui-list', UIList);
