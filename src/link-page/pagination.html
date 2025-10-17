@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/src/components/ui-pagination.js"></script>
+    <script type="module" src="/src/components/ui-navigation-btn.js"></script>
+    <script type="module" src="/src/main.js"></script>
+    <title>UASLP UI Kit - Tab</title>
+</head>
+<body>
+    <a href="/">Volver a la lista</a>
+
+    <h1>Componentes Pagination</h1>
+
+    <h3>Pagination</h3>
+
+   
+    <ui-pagination></ui-pagination>
+    <br><br>
+    <ui-pagination currentPage="1" totalPages="50"></ui-pagination>
+    <br><br>
+    <ui-pagination currentPage="20" totalPages="50"></ui-pagination>
+    <br><br>
+    <ui-pagination currentPage="1" totalPages="5"></ui-pagination>
+
+    <br><br>
+
+    <ui-navigation-btn type="previous">  </ui-navigation-btn>
+    <ui-navigation-btn type="next">  </ui-navigation-btn>
+
+    <br><br>
+
+    <ui-navigation-btn type="previous"> Atras </ui-navigation-btn>
+    <br>
+    <ui-navigation-btn type="next"> Continuar </ui-navigation-btn>
+    
+    <br><br>
+
+    <ui-navigation-btn type="previous" disabled> Atras </ui-navigation-btn>
+    <br>
+    <ui-navigation-btn type="next" disabled> Continuar </ui-navigation-btn>
+</body>
+</html>
