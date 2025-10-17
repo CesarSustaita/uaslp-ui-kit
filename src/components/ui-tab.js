@@ -17,6 +17,7 @@ export class UITab extends LitElement {
     static styles = css `
         
         .tab-container {
+            white-space: nowrap; 
             cursor: pointer;
             background: none;
             border: none;
@@ -35,6 +36,7 @@ export class UITab extends LitElement {
             line-height: 100%; /* 16px */
             user-select: none; 
             -webkit-user-select: none; 
+            -webkit-tap-highlight-color: transparent;
         }
 
         :host([active]) .tab-container {
