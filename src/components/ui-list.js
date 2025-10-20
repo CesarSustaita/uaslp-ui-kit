@@ -15,7 +15,6 @@ export class UIList extends LitElement {
         
     .list-container {
         display: flex;
-        dis
         padding: 10px;
         flex-direction: row;
         align-items: flex-start;
@@ -24,6 +23,7 @@ export class UIList extends LitElement {
         border-radius: 10px;
         border: 1px solid var(--background-background-component);
         background: var(--background-background-component);
+        -webkit-tap-highlight-color: transparent;
     }
 
     .list-container:not([disabled]):hover {
@@ -39,10 +39,11 @@ export class UIList extends LitElement {
         flex-direction: column;
         width: 100%;
         font-family: "Open Sans";
-        font-size: 16px;
+        font-size: 14px;
         font-style: normal;
         font-weight: 400;
         line-height: 150%; /* 24px */
+        border: 0px solid black;
         
     }
 
@@ -68,6 +69,13 @@ export class UIList extends LitElement {
         color: var(--text-default-disabled);
         stroke: var(--text-default-disabled); 
     }
+    
+    .first-element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+    }
 
     .end-element {
         display: flex;
@@ -81,6 +89,10 @@ export class UIList extends LitElement {
     :host([disabled]) ::slotted(span[slot="end-element"]) {
         color: var(--text-default-disabled) !important; 
         stroke: var(--text-default-disabled) !important; 
+    }
+
+    ::slotted([slot="start-element"]) svg {
+        color: var(--text-default-default);
     }
 
     ::slotted([slot="end-element"]) svg {
@@ -118,11 +130,11 @@ export class UIList extends LitElement {
         super();
         
         this.text= 'List Item';
-        this.description= 'Description';
+        this.description= '';
         this.disabled = false;
 
          if (!this.id) {
-            this.id = 'card-' + Math.random().toString(36).substring(2, 9);
+            this.id = 'list-' + Math.random().toString(36).substring(2, 9);
         }
     }
 
@@ -130,7 +142,7 @@ export class UIList extends LitElement {
     render() {
 
         return html `
-           <div class="list-container" @click=${this.handleItemClick}>
+           <div class="list-container" @click=${this.handleItemClick} ?disabled=${this.disabled}>
             <div class="first-element">
                 <slot name="start-element"></slot>
             </div>
