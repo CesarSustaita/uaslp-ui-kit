@@ -218,6 +218,7 @@ export class UInput extends LitElement {
                         placeholder="${this.placeholder}"
                         ?disabled="${this.disabled}"
                         inputmode="${this.inputmode}" 
+                        value=${this.value}
                         @input=${this.handleInput}  @change=${this.handleInput}
                     >
                     </input>
@@ -233,7 +234,7 @@ export class UInput extends LitElement {
     }
 
     handleInput(event) {
-            // 1. Si está deshabilitado, no hagas nada.
+            event.stopPropagation();
             if (this.disabled) {
                 return;
             }
