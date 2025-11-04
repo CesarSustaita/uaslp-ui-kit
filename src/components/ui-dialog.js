@@ -1,6 +1,8 @@
 import {LitElement, css, html} from 'lit';
 import '../tokens/ui-tokens.css';
 import '../tokens/ui-fonts.css';
+import '../components/ui-button';
+import '../components/ui-icon-button';
 
 
 export class UIDialog extends LitElement {
@@ -42,7 +44,6 @@ export class UIDialog extends LitElement {
         
     .dialog-container {
         display: flex;
-        width: 600px;
         max-width: 600px;
         padding: 32px;
         flex-direction: column;
@@ -58,8 +59,7 @@ export class UIDialog extends LitElement {
 
     .dialog-container[type="mobile"] {
         display: flex;
-        width: 300px;
-        max-width: 300px;
+        max-width: 280px;
         padding: 32px;
         flex-direction: column;
         gap: 24px;
@@ -149,12 +149,13 @@ export class UIDialog extends LitElement {
         this.type = 'web'; // Valor por defecto
         this.title = 'Título del Diálogo';
         this.disableClose = false;
+        this.close = this.close.bind(this); 
         this.handleKeyupBound = this.handleKeyup.bind(this);
         // Genera un ID único si el usuario no lo proporciona
         if (!this.id) {
             this.id = 'dialog-' + Math.random().toString(36).substring(2, 9);
         };
-
+        
 
     }
 

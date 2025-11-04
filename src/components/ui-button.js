@@ -148,6 +148,9 @@ export class UIButton extends LitElement {
   constructor() {
     super();
     this.disabled = false;
+    this.fullWidth = false;
+    this.size = 'medium';
+    this.type = 'primary';
 
     if (!this.id) {
             this.id = 'btn-' + Math.random().toString(36).substring(2, 9);
@@ -176,7 +179,7 @@ export class UIButton extends LitElement {
       event.stopPropagation();
       return;
     }
-
+    event.stopPropagation();
     this.dispatchEvent(new CustomEvent('click',{ //event name
       detail: { id: this.id },
       bubbles: true,

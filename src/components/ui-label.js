@@ -38,6 +38,16 @@ export class UILabel extends LitElement {
         display: flex;
         flex-direction: column;
         margin-top:4px;
+        cursor: pointer; 
+        -webkit-user-select: none; 
+        -moz-user-select: none;    
+        -ms-user-select: none;  
+        user-select: none; 
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    :host([disabled]) .text-area {
+            cursor: default;
     }
 
     .label-container.is-switch .component {
@@ -77,6 +87,12 @@ export class UILabel extends LitElement {
 
     constructor() {
         super();
+        this.checked = false;
+         this.disabled = false;
+
+        if (!this.id) {
+             this.id = 'label-control-' + Math.random().toString(36).substring(2, 9);
+        }
          
     }
 
@@ -118,7 +134,7 @@ export class UILabel extends LitElement {
         return html `
             <div class="label-container ${switchClass}" >
                 <div class="component">${this.renderType()}</div>
-                <div class="text-area">
+                <div class="text-area" @click=${this.handleLabelClick}>
                     <span class="main-text">${this.label}</span>
                     <slot name="description" class="description"></slot> 
                 </div>
@@ -128,22 +144,60 @@ export class UILabel extends LitElement {
         
     }
 
+    handleLabelClick() {
+        if (this.disabled) {
+            return;
+        }
+
+        const control = this.shadowRoot.querySelector('ui-checkbox, ui-switch, ui-radio-button');
+        
+        if (!control) {
+             return; 
+        }
+
+        let internalLabel;
+        if (this.type === 'checkbox') {
+            internalLabel = control.shadowRoot.querySelector('label.checkbox-label');
+        } else if (this.type === 'radio') {
+            internalLabel = control.shadowRoot.querySelector('label.radio-label');
+        } else if (this.type === 'switch') {
+            internalLabel = control.shadowRoot.querySelector('label.switch-label');
+        }
+
+        if (internalLabel) {
+            internalLabel.click();
+        }
+    }
    
     handleControlChange(event) {
-        this.checked = event.target.checked;
+    event.stopPropagation();
 
-        const detailData = {
-            checked: this.checked, // Estado de activación
-            name: this.name || this.getAttribute('name'), 
-            id: this.id || this.getAttribute('id')
-        };
+    if (this.disabled) {
+      return;
+    }
+    
+    let newCheckedState = false;
+    
+    if (this.type === 'checkbox') {
+      newCheckedState = event.detail.active; 
+    } else if (this.type === 'switch' || this.type === 'radio') {
+      newCheckedState = event.detail.checked;
+    }
 
-        this.dispatchEvent(new CustomEvent('change', {
+    this.checked = newCheckedState;
+
+    const detailData = {
+        checked: this.checked, // Estado de activación
+        name: this.name || this.getAttribute('name'), 
+        id: this.id || this.getAttribute('id')
+    };
+
+    this.dispatchEvent(new CustomEvent('change', {
         detail: detailData,
         bubbles: true,
         composed: true
     }));
-    }
+  }
 
     
 }

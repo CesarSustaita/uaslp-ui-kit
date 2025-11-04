@@ -158,7 +158,11 @@ export class UIList extends LitElement {
         `;
     }
 
-    handleItemClick() {
+    handleItemClick(event) {
+        if (event.target !== event.currentTarget) {
+            return;
+        }
+        
        if (this.disabled) {
         return;
         }

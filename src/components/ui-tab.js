@@ -41,8 +41,8 @@ export class UITab extends LitElement {
 
         :host([active]) .tab-container {
             color: var(--text-brand-default);
-            border-bottom: 1px solid var(--Border-Brand-Default, #004A98);
-            background: var(--Background-Background-Component, #FDFDFE);
+            border-bottom: 1px solid var(--border-brand-default);
+            background: var(--background-background-component);
         }
 
         .data {

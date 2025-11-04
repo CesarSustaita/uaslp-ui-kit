@@ -14,4 +14,14 @@ export default defineConfig({
       formats: ['es'],
     },
   },
+  test: {
+    environment: 'jsdom', 
+    globals: true,     
+    include: ['**/*.test.js', '**/*.spec.js'], 
+    setupFiles: [path.resolve(__dirname, './src/test/setup.js')],
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components'), 
+      '@tokens': path.resolve(__dirname, 'src/tokens'),
+    },    
+  },
 });

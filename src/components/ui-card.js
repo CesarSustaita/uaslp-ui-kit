@@ -211,15 +211,19 @@ export class UICard extends LitElement {
         `;
     }
 
-    handleClick() {
+    handleClick(event) {
 
-    if (this.isInteractive) {
-        this.dispatchEvent(new CustomEvent('card-click', { //evento
-            detail: { id: this.id || this.getAttribute('id') },
-            bubbles: true,
-            composed: true
-        }));
-    }
+        if (event.target !== event.currentTarget) {
+            return; 
+        }
+    
+        if (this.isInteractive) {
+            this.dispatchEvent(new CustomEvent('card-click', { //evento
+                detail: { id: this.id || this.getAttribute('id') },
+                bubbles: true,
+                composed: true
+            }));
+        }
 }
 
 
