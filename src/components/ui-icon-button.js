@@ -116,6 +116,8 @@ export class UIconButton extends LitElement {
 
   constructor() {
     super();
+    this.size = 'medium';
+     this.type = 'primary';
     this.disabled = false;
 
     if (!this.id) {
@@ -137,8 +139,8 @@ export class UIconButton extends LitElement {
   }
 
   handleClick(event){
+    event.stopPropagation();
     if(this.disabled){
-      event.stopPropagation();
       return;
     }
 
