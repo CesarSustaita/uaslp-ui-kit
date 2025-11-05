@@ -1,19 +1,43 @@
 {
   "name": "uaslp-ui-kit",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
+  "description": "UASLP UI Kit: This project is a complete design ecosystem, including a Figma UI Kit, a web component library built with Lit, and comprehensive documentation. The goal is to standardize design and user experience, making it easier to develop applications and websites for the entire university community.",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "keywords": [
+    "web-components",
+    "lit",
+    "lit-element",
+    "ui",
+    "design-system",
+    "vite"
+  ],
+  "files": [
+    "dist",
+    "main.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "César Sustaita",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CesarSustaita/uaslp-ui-kit"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
     "jsdom": "^27.0.1",
     "vite": "^7.1.2",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
     "vitest": "^4.0.5"
   },
   "dependencies": {
