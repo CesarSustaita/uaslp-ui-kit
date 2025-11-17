@@ -47,10 +47,8 @@ export class UIAccordion extends LitElement {
             -webkit-tap-highlight-color: transparent;
             outline: none;
             overflow: hidden;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 100%; /* 16px */
+            font: var(--body-base);
+            font-weight: var(--font-weight-bold);
         }
         
         summary::marker { //compatibilidad con firefox
@@ -60,10 +58,8 @@ export class UIAccordion extends LitElement {
 
         .label-text {
             padding: 0 14px 14px 14px;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150%; /* 24px */
+            font: var(--body-base);
+            font-weight: var(--font-weight-regular);
             max-height: 0; 
             overflow: hidden;
             transition: max-height 0.4s ease-in-out, padding-top 0.4s ease-in-out, padding-bottom 0.4s ease-in-out;

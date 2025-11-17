@@ -24,11 +24,8 @@ export class UIButton extends LitElement {
       border: none;
       cursor: pointer;
       /* Body/regular/Regular */
-      font-family: var(--font-open-sans);
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 100%; /* 16px */
+      font: var(--body-base);
+      font-weight: var(--font-weight-regular);
       white-space: nowrap;
       user-select: none;
       -webkit-tap-highlight-color: transparent;

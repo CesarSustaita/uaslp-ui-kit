@@ -141,9 +141,7 @@ export class UICard extends LitElement {
             color: var(--text-default-default);
 
             /* Heading/H6 - xs */
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 150%; /* 30px */
+            font: var(--txt-h6);
         }
 
         ::slotted([slot="description"]) {
@@ -156,10 +154,8 @@ export class UICard extends LitElement {
             text-overflow: ellipsis;
 
             /* Txt/small/Regular */
-            
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 150%; /* 21px */
+            font: var(--txt-sm);
+            font-weight: var(--font-weight-regular);
         }
 
         ::slotted([slot="footer"]) {

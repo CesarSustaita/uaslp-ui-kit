@@ -88,10 +88,8 @@ export class UIDialog extends LitElement {
     }
 
     .header {
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 150%; /* 30px */
+        font: var(--txt-lg);
+        font-weight: var(--font-weight-bold);
     }
 
     .body-text {
@@ -104,10 +102,8 @@ export class UIDialog extends LitElement {
         display: flex;
         flex-direction: column;
         text-align: left;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%; /* 24px */
+        font: var(--txt-base);
+        font-weight: var(--font-weight-regular);
         align-self: stretch;
     }
 

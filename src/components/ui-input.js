@@ -24,11 +24,8 @@ export class UInput extends LitElement {
             gap: 6px;
             box-sizing: border-box;
             /* Body/regular/Regular */
-            font-family: "Open Sans";
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-
+            font: var(--body-base);
+            font-weight: var(--font-weight-regular);
         }
 
         .text-area {
@@ -109,10 +106,8 @@ export class UInput extends LitElement {
         border: none;
             outline: none;
             color: var(--text-default-on-element-secondary);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 100%; /* 16px */
+            font: var(--body-base);
+            font-weight: var(--font-weight-regular);
         }
 
         .input-field:disabled::-webkit-input-placeholder {
@@ -124,19 +119,15 @@ export class UInput extends LitElement {
         /* 2. Mozilla Firefox */
         .input-field::-moz-placeholder {
             color: var(--text-default-on-element-secondary);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 100%; /* 16px */
+            font: var(--body-base);
+      font-weight: var(--font-weight-regular);
         }
 
         /* 3. Microsoft Edge/IE */
         .input-field:-ms-input-placeholder {
             color: var(--text-default-on-element-secondary);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 100%; /* 16px */
+            font: var(--body-base);
+            font-weight: var(--font-weight-regular);
         }
 
 
