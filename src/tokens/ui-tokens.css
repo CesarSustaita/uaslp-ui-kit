@@ -202,6 +202,66 @@
 
     /* Font OpenSans */
     --font-open-sans: 'Open Sans';
+
+    /* -------------------------------------------
+       2. FONT WEIGHT (Pesos de Fuente)
+    ------------------------------------------- */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+
+     /* -------------------------------------------
+       3. FONT SIZE (Tokens Primitivos de Tamaño)
+    ------------------------------------------- */
+    /* Display / Títulos de página (61px a 20px) */
+    /*Heading H1 - H6*/
+    --font-size-h1: 3.815rem;  /* 61.04px */
+    --font-size-h2: 3.05rem;   /* 48.83px */
+    --font-size-h3: 2.44rem;   /* 39.06px */
+    --font-size-h4: 1.95rem;   /* 31.25px */
+    --font-size-h5: 1.56rem;   /* 25px */
+    --font-size-h6: 1.25rem;   /* 20px */
+
+    /* Cuerpo de texto */
+    --font-size-body-lg: 1.25rem;  /* 20px */
+    --font-size-body-md: 1.125rem; /* 18px */
+    --font-size-body-base: 1rem;   /* 16px */
+    --font-size-body-sm: 0.875rem; /* 14px */
+
+    /* -------------------------------------------
+       4. LINE HEIGHT (Altura de Línea)
+    ------------------------------------------- */
+    --line-height-h: 1.2; 
+    --line-height-text: 1.5; 
+    --line-height-body: 1; 
+
+    /*VALORES SEMANTICOS*/
+
+    /* HEADINGS */
+
+    /* HEADINGS */
+    --txt-h1: var(--font-weight-bold) var(--font-size-h1)/var(--line-height-h) var(--font-open-sans);
+    --txt-h2: var(--font-weight-bold) var(--font-size-h2)/var(--line-height-h) var(--font-open-sans);
+    --txt-h3: var(--font-weight-bold) var(--font-size-h3)/var(--line-height-h) var(--font-open-sans);
+    --txt-h4: var(--font-weight-bold) var(--font-size-h4)/var(--line-height-h) var(--font-open-sans);
+    --txt-h5: var(--font-weight-bold) var(--font-size-h5)/var(--line-height-h) var(--font-open-sans);
+    --txt-h6: var(--font-weight-bold) var(--font-size-h6)/var(--line-height-h) var(--font-open-sans);
+
+    /* TEXT SCALE */
+    --txt-lg:   var(--font-size-body-lg)/var(--line-height-text)   var(--font-open-sans);
+    --txt-md:   var(--font-size-body-md)/var(--line-height-text)   var(--font-open-sans);
+    --txt-base: var(--font-size-body-base)/var(--line-height-text) var(--font-open-sans);
+    --txt-sm:   var(--font-size-body-sm)/var(--line-height-text)   var(--font-open-sans);
+
+    /* BODY  */
+    --body-lg:   var(--font-size-body-lg)/var(--line-height-body) var(--font-open-sans);
+    --body-md:   var(--font-size-body-md)/var(--line-height-body) var(--font-open-sans);
+    --body-base: var(--font-size-body-base)/var(--line-height-body) var(--font-open-sans);
+    --body-sm:   var(--font-size-body-sm)/var(--line-height-body) var(--font-open-sans);
+
 }
 
 body {
