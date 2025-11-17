@@ -38,11 +38,8 @@ export class UIList extends LitElement {
         display: flex;
         flex-direction: column;
         width: 100%;
-        font-family: "Open Sans";
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%; /* 24px */
+        font: var(--txt-sm);
+        font-weight: var(--font-weight-regular);
         border: 0px solid black;
         
     }
@@ -117,11 +114,8 @@ export class UIList extends LitElement {
         text-overflow: ellipsis;
         
         /* Body/regular/Semi bold */
-        font-family: "Open Sans";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 100%; /* 16px */
+        font: var(--body-base);
+        font-weight: var(--font-weight-semibold);
     }
 
     `;
