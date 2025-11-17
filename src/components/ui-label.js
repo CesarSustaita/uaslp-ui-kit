@@ -62,24 +62,16 @@ export class UILabel extends LitElement {
     .main-text {
         align-self: stretch;
         color: var(--text-default-default);
-        font-family: "Open Sans";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%; /* 24px */
+        font: var(--txt-base);
+        font-weight: var(--font-weight-regular);
     }
 
     .description {
         align-self: stretch;
         color: var(--text-default-tertiary);
         /* Txt/regular/Regular */
-        font-family: "Open Sans";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%; /* 24px */
-        border: 1px solid black;
-
+        font: var(--txt-base);
+        font-weight: var(--font-weight-regular);
     }
 
  
