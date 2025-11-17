@@ -20,11 +20,8 @@ export class UITag extends LitElement {
             gap: 10px;
             border-radius: 8px;
             flex-wrap: nowrap;
-            font-family: "Open Sans";
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 100%; /* 16px */
+            font: var(--body-base);
+            font-weight: var(--font-weight-regular);
         }
 
         slot {
