@@ -5,7 +5,8 @@ import '../tokens/ui-fonts.css';
 export class UIPagination extends LitElement {
     static properties = {
         currentPage: { type: Number, reflect: true },
-        totalPages: { type: Number }
+        totalPages: { type: Number },
+        id: { type: String, reflect: true } 
     };
 
     static NUM_MAX_VISIBLE = 3;
@@ -91,13 +92,19 @@ export class UIPagination extends LitElement {
         this.currentPage = 1;
         this.totalPages = 13; //valores por defecto para que se muestren
         this.changePageBound = this.changePage.bind(this);
+        if (!this.id) {
+            this.id = 'pagination-' + Math.random().toString(36).substring(2, 9);
+        }
     }
 
     changePage(newPage){
         if(newPage >= 1 && newPage <= this.totalPages && newPage !== this.currentPage) {
             this.currentPage = newPage;
             this.dispatchEvent(new CustomEvent('page-change', { //se dispara evento
-                detail: { page: newPage},
+                detail: { 
+                    page: newPage,
+                    id: this.id
+                },
                 bubbles: true,
                 composed: true
             }))

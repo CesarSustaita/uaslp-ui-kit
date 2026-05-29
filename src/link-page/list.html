@@ -83,5 +83,46 @@
     </ui-list>
 
 
+    <div id="menu-ajustes" >
+
+  <!-- Ítem 1 -->
+  <ui-list 
+    id="id-wifi" 
+    text="Wi-Fi" 
+    description="Red: UASLP_Segura"
+  >
+    <svg slot="end-element" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </ui-list>
+
+  <!-- Ítem 2 -->
+  <ui-list 
+    id="id-bluetooth" 
+    text="Bluetooth" 
+    description="Desactivado"
+  >
+    <svg slot="end-element" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </ui-list>
+
+</div>
+<script>
+  // 1. Seleccionamos el contenedor de la lista
+  const menuContainer = document.getElementById('menu-ajustes');
+
+  // 2. Escuchamos el evento 'list-item-click'
+  menuContainer.addEventListener('list-item-click', (event) => {
+    
+    // Extraemos el ID del ítem seleccionado
+    const selectedId = event.detail.id;
+    
+    console.log(`--- Selección de Menú ---`);
+    console.log(`Opción: ${selectedId}`);
+
+  });
+</script>
+
 </body>
 </html>

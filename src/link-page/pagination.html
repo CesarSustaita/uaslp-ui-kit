@@ -27,18 +27,60 @@
     <br><br>
 
     <ui-navigation-btn type="previous">  </ui-navigation-btn>
-    <ui-navigation-btn type="next">  </ui-navigation-btn>
+    <ui-navigation-btn type="next"> </ui-navigation-btn>
 
     <br><br>
 
-    <ui-navigation-btn type="previous"> Atras </ui-navigation-btn>
+    <ui-navigation-btn type="previous" > Atras </ui-navigation-btn>
     <br>
-    <ui-navigation-btn type="next"> Continuar </ui-navigation-btn>
+    <ui-navigation-btn type="next" > Continuar </ui-navigation-btn>
     
     <br><br>
 
     <ui-navigation-btn type="previous" disabled> Atras </ui-navigation-btn>
     <br>
     <ui-navigation-btn type="next" disabled> Continuar </ui-navigation-btn>
+
+    <br><br>
+
+    <ui-navigation-btn type="previous" label="Atras"></ui-navigation-btn>
+    <br>
+    <ui-navigation-btn type="next" label="Siguiente" ></ui-navigation-btn>
+    <ui-navigation-btn type="previous">  </ui-navigation-btn>
+    <ui-navigation-btn type="next"> </ui-navigation-btn>
+
+
+    <br><br>
+
+    <ui-pagination id="ui-pag"></ui-pagination>
+
+    <script>
+    const pagination = document.getElementById('ui-pag');
+    pagination.addEventListener('page-change', (event) => {
+        
+        const { id, page } = event.detail;
+        
+        console.log(`ID del componente: ${id}`);
+        console.log(`Página solicitada: ${page}`);
+        
+    });
+    </script>
+    
+    <div id="btn-nav">
+        <ui-navigation-btn type="previous" id="id-atras"> Atras </ui-navigation-btn>
+        <ui-navigation-btn type="next" id="id-adelante"> Continuar </ui-navigation-btn>
+    </div>
+    <script>
+    const nav = document.getElementById('btn-nav');
+    nav.addEventListener('click-navigation', (event) => {
+        
+        const { id, action } = event.detail;
+        
+        console.log(`ID del btn: ${id}`);
+        console.log(`Action: ${action}`);
+        
+    });
+    </script>
+
 </body>
 </html>
