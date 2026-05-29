@@ -95,7 +95,7 @@ export class UINavigationBtn extends LitElement {
         if (this.label) {
             return this.label;
         }
-        return this.type === 'previous' ? 'Previous' : 'Next';
+        return '';
     }
 
 

@@ -152,14 +152,20 @@ export class UIList extends LitElement {
         `;
     }
 
-    handleItemClick(event) {
-        if (event.target !== event.currentTarget) {
-            return;
-        }
-        
-       if (this.disabled) {
+    handleItemClick(event) {        
+    if (this.disabled) {
         return;
-        }
+     }
+
+    const path = event.composedPath();
+    const clickedInteractive = path.some(element => 
+        element.tagName === 'UI-BUTTON' || 
+        element.tagName === 'UI-SWITCH' || 
+        element.tagName === 'UI-CHECKBOX' ||
+        element.tagName === 'A'
+    );
+
+    if (clickedInteractive) return;
     
     this.dispatchEvent(new CustomEvent('list-item-click', {//evento
         detail: { 

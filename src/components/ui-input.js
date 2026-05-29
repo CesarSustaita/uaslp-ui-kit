@@ -10,7 +10,8 @@ export class UInput extends LitElement {
         disabled: { type: Boolean, reflect: true },
         error: { type: String, reflect: true },   
         value: { type: String, reflect: true },
-        inputmode: { type: String } 
+        inputmode: { type: String },
+        id: { type: String, reflect: true } 
 
     };
     static styles = css `
@@ -69,6 +70,7 @@ export class UInput extends LitElement {
             width:100%;
             font-family: var(--font-open-sans);
             caret-color: var(--text-default-on-element-secondary);
+            color: var(--text-default-default);
         }
 
         /* 1. ESTADO DISABLED: El input */
@@ -183,6 +185,9 @@ export class UInput extends LitElement {
         this.error = ''; 
         this.disabled = false;
         this.value = '';
+        if (!this.id) {
+            this.id = 'input-' + Math.random().toString(36).substring(2, 9);
+        }
         
     }
 
@@ -238,6 +243,7 @@ export class UInput extends LitElement {
             this.dispatchEvent(new CustomEvent(event.type, {
                 detail: {
                     value: value,
+                    id: this.id 
                 },
                 bubbles: true,
                 composed: true

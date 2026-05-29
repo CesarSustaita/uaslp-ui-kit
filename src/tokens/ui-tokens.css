@@ -234,9 +234,9 @@
     /* -------------------------------------------
        4. LINE HEIGHT (Altura de Línea)
     ------------------------------------------- */
-    --line-height-h: 1.2; 
-    --line-height-text: 1.5; 
-    --line-height-body: 1; 
+    --line-height-h: 1.2; /* 120% */
+    --line-height-text: 1.5;  /* 150% */
+    --line-height-body: 1;  /* 100% */
 
     /*VALORES SEMANTICOS*/
 

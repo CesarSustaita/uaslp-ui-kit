@@ -159,7 +159,7 @@ export class UIButton extends LitElement {
     const sizeClass = this.size === 'small' ? 'sm' : '';
     const typeClass = ['primary', 'secondary', 'tertiary','danger', 'positive'].includes(this.type) ? this.type : 'primary';
     return html`
-    <button 
+    <button
     class="${typeClass} ${sizeClass} ${widthClass}" ?disabled=${this.disabled}
     @click=${this.handleClick}
     >

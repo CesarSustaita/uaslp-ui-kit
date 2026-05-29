@@ -127,7 +127,8 @@ export class UICheckbox extends LitElement {
 
     this.dispatchEvent(new CustomEvent('change', { //event name
         detail: {
-            active: this.active
+            active: this.active,
+            id: this.id,
         },
         bubbles: true,
         composed: true

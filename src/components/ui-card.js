@@ -209,9 +209,18 @@ export class UICard extends LitElement {
 
     handleClick(event) {
 
-        if (event.target !== event.currentTarget) {
-            return; 
-        }
+        if (!this.isInteractive) return;
+
+        const path = event.composedPath();
+    
+        const clickedInteractiveElement = path.some(element => {
+            return element.tagName === 'UI-BUTTON' || 
+                   element.tagName === 'UI-ICON-BUTTON' || 
+                   element.tagName === 'BUTTON' || 
+                   element.tagName === 'A';
+        });
+
+    if (clickedInteractiveElement) return;
     
         if (this.isInteractive) {
             this.dispatchEvent(new CustomEvent('card-click', { //evento
