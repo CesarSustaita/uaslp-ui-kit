@@ -254,7 +254,7 @@ export class UIFileUploader extends LitElement {
     }
 
     handleRemoveFiles(event){
-        const indexRemove = event.currentTarget.index;
+        const indexRemove = parseInt(event.currentTarget.dataset.index, 10);
 
         this._listFiles = this._listFiles.filter((_, index) => index !== indexRemove);
 
@@ -268,6 +268,12 @@ export class UIFileUploader extends LitElement {
 
         const input = this.shadowRoot.getElementById("file-input");
         if (input) input.value = '';
+
+        this.dispatchEvent(new CustomEvent('ui-files-changed', {
+            detail: { files: this._listFiles },
+            bubbles: true,
+            composed: true
+        }));
     }
 
     get files() {
@@ -365,7 +371,7 @@ export class UIFileUploader extends LitElement {
                             <span slot="file-name">${file.name}</span>
                             <span slot="file-size">${displaySize}</span>
 
-                            <span slot="btn-remove" .index="${index}" @click="${this.handleRemoveFiles}">
+                            <span slot="btn-remove" data-index="${index}" @click="${this.handleRemoveFiles}">
                                 <ui-icon-button  type="tertiary" > 
                                     <svg  slot="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>

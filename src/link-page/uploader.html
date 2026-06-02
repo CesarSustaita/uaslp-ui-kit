@@ -62,40 +62,46 @@
     ></ui-file-uploader>
 
 
-    <ui-file-uploader id="cargador-evidencia" required accept="*" multiple></ui-file-uploader>
+   <ui-file-uploader 
+id="obtencion-archivos"
+        accept=".pdf"
+        maxSize="5"
+        multiple
+        required
+        label="Arrastra y suelta tus archivos aquí o busca en tu equipo"
+        helperText="Tamaño máximo por archivo: 5 MB"
+        width ="100%"
+        multiple
+        showBrowseButton
+></ui-file-uploader>
+<ui-button id="btn-procesar">Procesar Archivos</ui-button>
 
-    <ui-button id="btn-enviar">Enviar Formulario</ui-button>
+<script>
+  const uploader = document.getElementById('obtencion-archivos');
+  const boton = document.getElementById('btn-procesar');
 
-    <script>
-        // Al dar clic en el botón de enviar, ejecutamos esta función:
-function alEnviarFormulario() {
-    // 1. Buscamos el componente en el DOM por su ID externo
-    const uploader = document.getElementById('cargador-evidencia');
+  // La acción ocurre únicamente cuando el usuario decide procesar o enviar
+  boton.addEventListener('click', () => {
+    
+    // 1. Acceso directo y agnóstico a la propiedad del componente
+    const archivos = uploader.files;
 
-    // 2. Ejecutamos el método público de validación
-    const esValido = uploader.validate();
+    // 2. Imprime el arreglo de archivos nativos actualizados
+    console.log('Arreglo de archivos:', archivos);
 
-    if (esValido) {
-        // 3. ¡Magia! Extraemos el arreglo nativo usando la propiedad .files (GET)
-        const listaArchivos = uploader.files;
+    // 3. Empaqueta en FormData
+    const formData = new FormData();
+    archivos.forEach((archivo) => {
+      formData.append('archivos[]', archivo);
+    });
 
-        console.log("Archivos listos para el Backend:", listaArchivos);
-        // Salida en consola: [File, File]
-
-        // 4. Ejemplo de cómo empaquetarlo para enviarlo por API (Fetch/Axios)
-        const formData = new FormData();
-        listaArchivos.forEach(file => {
-            formData.append('archivos[]', file);
-        });
-        
-        // Aquí el desarrollador continúa con su petición HTTP...
-    } else {
-        console.log("El formulario no se puede enviar porque faltan archivos obligatorios.");
+    // 4. Imprime el contenido del FormData para verificarlo
+    console.log('Contenido del FormData:');
+    for (let [key, value] of formData.entries()) {
+      console.log('Clave:', key, '| Valor:', value);
     }
-}
-
-document.getElementById('btn-enviar').addEventListener('click', alEnviarFormulario);
-    </script>
+  });
+</script>
 
 
     </body>
