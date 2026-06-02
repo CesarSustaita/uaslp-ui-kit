@@ -24,6 +24,7 @@ import './components/ui-navigation-btn.js';
 import './components/ui-accordion.js';
 import './components/ui-menu.js';
 import './components/ui-notification.js'; 
+import './components/ui-file-uploader.js';
 
 
 
