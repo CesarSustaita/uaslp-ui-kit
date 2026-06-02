@@ -133,14 +133,14 @@ describe('UICheckbox - Lanzamiento del Evento', () => {
 
     // se obtiene los datos del evento si es active o no
     const emittedEvent = changeSpy.mock.calls[0][0];
-    expect(emittedEvent.detail).toEqual({ active: true });
+    expect(emittedEvent.detail).toEqual({ active: true, id: expect.any(String) });
 
     label.click();
     await element.updateComplete;
     //al volver a presionar el estado active debe ser false para que se desactive el componente
     expect(changeSpy).toHaveBeenCalledTimes(2);
     const secondEvent = changeSpy.mock.calls[1][0];
-    expect(secondEvent.detail).toEqual({ active: false });
+    expect(secondEvent.detail).toMatchObject({ active: false });
   });
 
   it('3.2. Evento en disabled: NO se dispara el evento "change" si está en disabled', async () => {

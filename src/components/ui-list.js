@@ -160,8 +160,10 @@ export class UIList extends LitElement {
     const path = event.composedPath();
     const clickedInteractive = path.some(element => 
         element.tagName === 'UI-BUTTON' || 
+        element.tagName === 'UI-ICON-BUTTON' ||
         element.tagName === 'UI-SWITCH' || 
         element.tagName === 'UI-CHECKBOX' ||
+        element.tagName === 'BUTTON' ||
         element.tagName === 'A'
     );
 

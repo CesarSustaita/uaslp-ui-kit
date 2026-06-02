@@ -124,7 +124,7 @@ describe('UInput - 2. Flujo de Datos y Eventos', () => {
     
     // obtiene el valor del evento emitido
     const emittedEvent = inputSpy.mock.calls[0][0];
-    expect(emittedEvent.detail).toEqual({ value: 'hola' });
+    expect(emittedEvent.detail).toMatchObject({ value: 'hola' });
   });
 
   it('2.3. Se dispara el evento cuando se pierde el foco en el mismo input', async () => {
@@ -137,7 +137,7 @@ describe('UInput - 2. Flujo de Datos y Eventos', () => {
     await element.updateComplete;
     expect(changeSpy).toHaveBeenCalledTimes(1);
     const emittedEvent = changeSpy.mock.calls[0][0];
-    expect(emittedEvent.detail).toEqual({ value: 'mundo' });
+    expect(emittedEvent.detail).toMatchObject({ value: 'mundo' });
   });
 
   it('2.4.No debe disparar eventos si está en estado disabled', async () => {

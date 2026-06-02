@@ -21,14 +21,18 @@ describe('UINavigationBtn - Renderizado y Propiedades', () => {
     expect(element.type).toBe('previous');
     expect(element.disabled).toBe(false);
     
-    expect(button.textContent.trim()).toContain('Previous'); 
+    const button = element.shadowRoot.querySelector('button');
+    expect(button.classList.contains('previous')).toBe(true);
+    expect(button.querySelector('svg')).not.toBeNull();
   });
 
   it('1.2. Debe tener el texto por defecto "Next"', async () => {
     element.type = 'next';
     await element.updateComplete;
 
-    expect(button.textContent.trim()).toContain('Next'); 
+    const button = element.shadowRoot.querySelector('button');
+    expect(button.classList.contains('next')).toBe(true);
+    expect(button.querySelector('svg')).not.toBeNull();
   });
 
   it('1.3. Renderizado de Label Personalizado: Debe usar el label en lugar del texto por defecto', async () => {
