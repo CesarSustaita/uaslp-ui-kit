@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/src/components/ui-file-uploader.js"></script>
+
+    <title>UASLP UI Kit - File Uploader</title>
+
+    
+</head>
+<body>
+    <a href="/">Volver a la lista</a>
+
+    <h1>Componente File Uploader</h1>
+
+ 
+    <ui-file-uploader 
+        label="Arrastra y suelta tus archivos aquí o busca en tu equipo"
+        helperText="Tamaño máximo por archivo: 5 MB"
+        width ="550px"
+        showBrowseButton
+        sizeBrowseButton = "small"
+        multiple
+        accept="*"
+        maxSize="5"
+    ></ui-file-uploader>
+
+    <ui-file-uploader 
+        label="Arrastra y suelta tus archivos aquí o busca en tu equipo"
+        helperText="Tamaño máximo por archivo: 5 MB"
+        
+        showBrowseButton
+        multiple
+        accept="*"
+        maxSize="5"
+        disabled
+    ></ui-file-uploader>
+
+    <ui-file-uploader 
+        label="Arrastra y suelta tus archivos aquí"
+        helperText="Solo de tipo PDF"
+        width ="500px"
+        multiple
+        accept="*"
+        maxSize="5"
+        required
+        showBrowseButton
+    ></ui-file-uploader>
+
+    <ui-file-uploader 
+        label="Arrastra y suelta tus archivos aquí"
+        helperText="Solo de tipo PDF"
+        width ="450px"
+        multiple
+        accept="*"
+        maxSize="5"
+        warningMessage="unos archivos no se subieron"
+        warningDescription="intenta otro"
+        negativeMessage="no se subio el archivo"
+        negativeDescription="intenta otro"
+    ></ui-file-uploader>
+
+
+    <ui-file-uploader id="cargador-evidencia" required accept="*" multiple></ui-file-uploader>
+
+    <ui-button id="btn-enviar">Enviar Formulario</ui-button>
+
+    <script>
+        // Al dar clic en el botón de enviar, ejecutamos esta función:
+function alEnviarFormulario() {
+    // 1. Buscamos el componente en el DOM por su ID externo
+    const uploader = document.getElementById('cargador-evidencia');
+
+    // 2. Ejecutamos el método público de validación
+    const esValido = uploader.validate();
+
+    if (esValido) {
+        // 3. ¡Magia! Extraemos el arreglo nativo usando la propiedad .files (GET)
+        const listaArchivos = uploader.files;
+
+        console.log("Archivos listos para el Backend:", listaArchivos);
+        // Salida en consola: [File, File]
+
+        // 4. Ejemplo de cómo empaquetarlo para enviarlo por API (Fetch/Axios)
+        const formData = new FormData();
+        listaArchivos.forEach(file => {
+            formData.append('archivos[]', file);
+        });
+        
+        // Aquí el desarrollador continúa con su petición HTTP...
+    } else {
+        console.log("El formulario no se puede enviar porque faltan archivos obligatorios.");
+    }
+}
+
+document.getElementById('btn-enviar').addEventListener('click', alEnviarFormulario);
+    </script>
+
+
+    </body>
+</html>
